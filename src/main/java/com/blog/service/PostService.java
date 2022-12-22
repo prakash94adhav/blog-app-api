@@ -6,20 +6,20 @@ import com.blog.payloads.PostDTO;
 import java.util.List;
 
 public interface PostService {
-    PostDTO createPost(PostDTO postDTO,int userId,int catId);
+    PostDTO createPost(PostDTO postDTO, int userId, int catId);
 
     Post updatePost(PostDTO postDTO, int postId);
 
     void deletePost(int postId);
 
-    List<Post> getAllPost();
+    List<PostDTO> getAllPost();
 
-    Post getPostByPostId(int postId);
+    PostDTO getPostByPostId(int postId);
 
-    List<Post> getPostsByCategory(int catId);
+    List<PostDTO> getPostsByCategory(int catId);
 
-    List<Post> getPostByUserId(int userId);
+    List<PostDTO> getPostByUserId(int userId);
 
-    List<Post> searchPost(String post);
+    List<PostDTO> searchPost(String post);
 
 }

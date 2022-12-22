@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.blog.CategoryConstant.CATEGORY;
-import static com.blog.CategoryConstant.CAT_ID;
+import static com.blog.constant.CategoryConstant.CATEGORY;
+import static com.blog.constant.CategoryConstant.CAT_ID;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {

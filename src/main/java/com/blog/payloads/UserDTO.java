@@ -1,17 +1,20 @@
 package com.blog.payloads;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDTO {
+@Builder
+public class UserDTO implements Serializable {
     private int id;
     @NotEmpty
     @Size(min = 4,message = "username must be min of 4 char")

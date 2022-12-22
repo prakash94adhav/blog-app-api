@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,8 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Post {
+public class Post implements Serializable {
+    private static final long serialVersionUID = 2405172041950251807L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "POST_ID")
@@ -27,9 +29,9 @@ public class Post {
     private Date addDate;
 
     @ManyToOne
-    @JoinColumn(name="cat_id")
+    @JoinColumn(name = "cat_id")
     private Category category;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
 }

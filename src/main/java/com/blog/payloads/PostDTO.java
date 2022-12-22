@@ -1,17 +1,16 @@
 package com.blog.payloads;
 
-import com.blog.entity.Category;
-import com.blog.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PostDTO {
+public class PostDTO implements Serializable {
 
     private String title;
     private String content;
